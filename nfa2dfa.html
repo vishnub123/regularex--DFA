@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Regex->NFA->DFA</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no" />
+    <meta name="google-site-verification" content="tXyJhIUjwgDkdY4scPFF1nBiVW9co3-HjowXazdoL7I" />
+    <link rel="stylesheet" href="./lib/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./lib/css/ripples.min.css">
+    <link rel="stylesheet" href="./lib/css/bootstrap-material-design.min.css">
+    <link rel="stylesheet" href="./css/toolbox.css">
+    <link rel="stylesheet" href="./css/nfa2dfa.css">
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./css/automata.css">
+  </head>
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header"> 
+          <a class="navbar-brand">Regular Expression To DFA</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container-fluid container-body">
+<link rel="stylesheet" href="./css/automata.css">
+<div class="row">
+  <span class="col-md-3">
+    <div class="well">
+      <h4>Introduction</h4>
+      <hr>
+      <p>
+        Convert simple regular expressions to deterministic finite automaton. (Regex->NFA->DFA)
+      </p>
+    </div>
+  </span>
+  <span class="col-md-3">
+    <div class="well">
+      <h4>Supported grammars</h4>
+      <hr>
+      <ul>
+        <li>r = (s)</li>
+        <li>r = st</li>
+        <li>r = s|t</li>
+        <li>r = s*</li>
+        <li>r = s+</li>
+        <li>r = s?</li>
+        <li>r = ϵ <br>(Copy this character to input if needed)</li>
+      </ul>
+    </div>
+  </span>
+  <span class="col-md-3">
+    <div class="well">
+      <h4>Examples</h4>
+      <hr>
+      <ul>
+        <li>(a|b)*</li>
+        <li>(a*|b*)*</li>
+        <li>((ϵ|a)b*)*</li>
+        <li>(a|b)*abb(a|b)*</li>
+      </ul>
+    </div>
+  </span>
+</div>
+
+<div class="row">
+  <div class="form-group">
+    <label for="input_regex" class="col-md-1 control-label">Input: </label>
+    <div class="col-md-11">
+      <input type="text" class="form-control" id="input_regex" placeholder="((ϵ|a)b*)*">
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-offset-10 col-md-2">
+    <button id="button_convert" class="btn btn-raised btn-block btn-primary">Convert</button>
+  </div>
+</div>
+<div id="alert_error" class="alert alert-dismissible alert-danger" hidden>
+  <button type="button" class="close" data-dismiss="alert">×</button>
+  <strong>Invalid Grammar</strong>
+  <p id="p_error"></p>
+</div>
+<div class="row">
+  <div id="dfa_table" class="col-xs-12">
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-12">
+    <svg id="svg" width="800">
+      <g></g>
+    </svg>
+  </div>
+</div>
+
+
+<script src="./lib/js/d3.v3.min.js"></script>
+<script src="./lib/js/dagre-d3.min.js"></script>
+<script src="./js/lexical.js"></script>
+<script src="./js/automata.js"></script>
+
+
+    </div>
+
+    <script src="./lib/js/jquery.min.js"></script>
+    <script src="./lib/js/bootstrap.min.js"></script>
+    <script src="./lib/js/ripples.min.js"></script>
+    <script src="./lib/js/material.min.js"></script>
+    <script src="./js/nfa2dfa.js"></script>
+    <script>
+    $(function() {
+        $.material.init();
+    });
+    </script>
+
+    
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-75616109-2', 'auto');
+      ga('send', 'pageview');
+    </script>
+
+  </body>
+</html>
