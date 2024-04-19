@@ -1,5 +1,5 @@
 <h1>Regular Expression to DFA Converter </h1>
-<p>To preview the website please <a href ="https://vishnub123.github.io/regularex--DFA/">visit</a></p>
+
 
 <p>Welcome to the Regular Expression to DFA Converter project! This tool allows you to convert regular expressions into Deterministic Finite Automata (DFAs), which are essential in pattern recognition and string matching applications.</p>
 
